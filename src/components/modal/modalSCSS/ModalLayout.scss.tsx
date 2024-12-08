@@ -1,4 +1,3 @@
-//* react core
 import {
   type ComponentPropsWithoutRef,
   type HTMLAttributes,
@@ -7,7 +6,6 @@ import {
 
 import { createPortal } from "react-dom";
 
-//* internal
 import styles from "./modal.module.scss";
 import { useClickOutside } from "@/hooks";
 import { useModalContext } from "./ModalContext.scss";

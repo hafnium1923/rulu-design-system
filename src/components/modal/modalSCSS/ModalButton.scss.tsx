@@ -1,7 +1,5 @@
-//* react core
-import { forwardRef, type MouseEvent } from "react";
+import { type ForwardedRef, forwardRef, type MouseEvent } from "react";
 
-//* internal
 import { useModalContext } from "./ModalContext.scss";
 import Button, {
   type ButtonProps,
@@ -12,7 +10,10 @@ interface ModalButtonProps extends ButtonProps {
 }
 
 const ModalButton = forwardRef(
-  ({ act = "close", onClick, children, ref, ...rest }: ModalButtonProps) => {
+  (
+    { act = "close", onClick, children, ...rest }: ModalButtonProps,
+    ref: ForwardedRef<HTMLButtonElement>
+  ) => {
     const { onClose, onOpen } = useModalContext();
 
     const handleClickButton = (e: MouseEvent<HTMLButtonElement>) => {

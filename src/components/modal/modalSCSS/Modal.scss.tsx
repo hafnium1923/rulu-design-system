@@ -1,7 +1,4 @@
-//* react core
 import type { PropsWithChildren } from "react";
-
-//* internal
 
 import {
   ModalLayout,

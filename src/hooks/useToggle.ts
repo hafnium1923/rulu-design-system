@@ -1,5 +1,4 @@
-//* react core
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 /**
  * @param {boolean} [preventClose=false]  - 닫기 방지 여부

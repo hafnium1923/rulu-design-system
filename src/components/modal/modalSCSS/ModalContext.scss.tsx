@@ -1,4 +1,3 @@
-//* react core
 import {
   createContext,
   type PropsWithChildren,
