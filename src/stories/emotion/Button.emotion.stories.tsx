@@ -1,11 +1,10 @@
-import Button, { ButtonProps } from '@/components/Button/Button.emotion'
+import Button, { type ButtonProps } from '@/components/button/buttonEmotion/Button.emotion'
 import type { Meta, StoryObj } from '@storybook/react'
 
 /**
  * 공용 버튼 컴포넌트 - emotion.Ver
  * button 태그의 모든 속성 가능
  */
-
 const meta = {
   title: 'Button/emotion',
   component: Button,

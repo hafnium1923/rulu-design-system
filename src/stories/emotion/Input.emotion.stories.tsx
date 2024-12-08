@@ -1,11 +1,10 @@
-import Input from '@/components/Input/Input.emotion'
+import Input from '@/components/input/inputEmotion/Input.emotion'
 import type { Meta, StoryObj } from '@storybook/react'
 
 /**
  * 공용 인풋 컴포넌트 - emotion.Ver
  * input 태그의 모든 속성 가능
  */
-
 const meta = {
   title: 'Input/emotion',
   component: Input,

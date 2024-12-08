@@ -1,6 +1,7 @@
-import type { ButtonProps } from '@/components/Button/Button.emotion'
-import { theme } from '@/styles/theme'
 import { css } from '@emotion/react'
+
+import { theme } from '@/styles/theme'
+import { type ButtonProps } from './Button.emotion'
 
 export const getVariantStyling = (variant: Required<ButtonProps>['variant']) => {
   const style = {
@@ -10,11 +11,11 @@ export const getVariantStyling = (variant: Required<ButtonProps>['variant']) => 
       color: theme.color.white,
 
       '&:hover:enabled': {
-        backgroundColor: theme.color.gray800,
+        backgroundColor: theme.color.black700,
       },
 
       '&:focus': {
-        boxShadow: `0 0 0 3px ${theme.color.gray800}`,
+        boxShadow: `0 0 0 3px ${theme.color.black700}`,
       },
     }),
 

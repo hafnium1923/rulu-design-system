@@ -1,27 +1,18 @@
-import { useEffect, useRef, type ComponentPropsWithRef } from 'react'
+import { useRef, type ComponentPropsWithoutRef, type HTMLAttributes } from 'react'
 import { createPortal } from 'react-dom'
 
-import { useModal } from './useModal.emotion'
-import { useClickOutside, useKeydownEffect } from '@/hooks'
-import { modalStyle as style } from '@/styles/components/Modal'
+import { useClickOutside } from '@/hooks'
+import * as styles from './modal.emotion.style'
+import { useModalContext } from './ModalContext.emotion'
+import useModalKeyboard from '../useModalKeyboard'
 
-type ModalLayoutProps = ComponentPropsWithRef<'dialog'>
+const ModalLayout = ({ children, css, ...rest }: ComponentPropsWithoutRef<'div'>) => {
+  const ref = useRef<HTMLDivElement>(null)
+  const { size, position, isOpen, hideScrim, isScrimCloseable, isEscCloseable, preventScroll, onClose } =
+    useModalContext()
 
-const ModalLayout = (props: ModalLayoutProps) => {
-  const { children, css, ...rest } = props
-  const ref = useRef<HTMLDialogElement>(null)
-  const { isOpen, onClose, hideScrim, isScrimClosable, isEscClosable, preventScroll } = useModal()
-
-  isScrimClosable && useClickOutside(ref, onClose)
-  isEscClosable && useKeydownEffect('ESC', onClose)
-
-  useEffect(() => {
-    if (preventScroll) document.body.style.overflow = 'hidden'
-
-    return () => {
-      if (preventScroll) document.body.style.overflow = 'unset'
-    }
-  }, [preventScroll])
+  isScrimCloseable && useClickOutside(ref, onClose)
+  useModalKeyboard(ref, onClose, preventScroll, isEscCloseable)
 
   return (
     <>
@@ -29,11 +20,16 @@ const ModalLayout = (props: ModalLayoutProps) => {
         createPortal(
           <>
             {!hideScrim && <Scrim />}
-            <dialog ref={ref} open={isOpen} css={[style.dialogStyle, css]} {...rest}>
-              <form method='dialog' css={style.layoutStyle}>
+            <div aria-modal={isOpen} css={styles.container}>
+              <div
+                ref={ref}
+                role='dialog'
+                css={[styles.getSizeStyling(size), styles.getPositionStyling(position), styles.layout, css]}
+                {...rest}
+              >
                 {children}
-              </form>
-            </dialog>
+              </div>
+            </div>
           </>,
           document.body
         )}
@@ -41,6 +37,24 @@ const ModalLayout = (props: ModalLayoutProps) => {
   )
 }
 
-const Scrim = () => <div css={style.scrimStyle} />
+const Scrim = () => <div css={styles.scrim} />
+
+export const ModalHeader = ({ children, ...rest }: HTMLAttributes<HTMLElement>) => (
+  <header css={styles.header} {...rest}>
+    {children}
+  </header>
+)
+
+export const ModalBody = ({ children, ...rest }: HTMLAttributes<HTMLDivElement>) => (
+  <div css={styles.body} {...rest}>
+    {children}
+  </div>
+)
+
+export const ModalFooter = ({ children, ...rest }: HTMLAttributes<HTMLDivElement>) => (
+  <div data-part='modal-footer' css={styles.footer} {...rest}>
+    {children}
+  </div>
+)
 
 export default ModalLayout

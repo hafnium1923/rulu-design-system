@@ -1,20 +1,20 @@
-import { forwardRef, type MouseEvent, type ForwardedRef } from 'react'
+import { forwardRef, type MouseEvent } from 'react'
 
-import ButtonEmotion, { type ButtonProps } from '@/components/Button/Button.emotion'
-import { useModal } from './useModal.emotion'
+import Button, { type ButtonProps } from '@/components/button/buttonEmotion/Button.emotion'
+import { useModalContext } from './ModalContext.emotion'
 
 interface ModalButtonProps extends ButtonProps {
   act?: 'close' | 'open'
 }
 
-const ModalButton = (props: ModalButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
-  const { act = 'close', onClick, children, ...attributes } = props
-  const { onClose, onOpen } = useModal()
+const ModalButton = forwardRef(({ act = 'close', onClick, children, ref, ...rest }: ModalButtonProps) => {
+  const { onClose, onOpen } = useModalContext()
 
   const handleClickButton = (e: MouseEvent<HTMLButtonElement>) => {
     if (onClick) {
       onClick(e)
     }
+
     if (act === 'close') {
       onClose()
     } else {
@@ -23,10 +23,10 @@ const ModalButton = (props: ModalButtonProps, ref: ForwardedRef<HTMLButtonElemen
   }
 
   return (
-    <ButtonEmotion onClick={handleClickButton} ref={ref} {...attributes}>
+    <Button onClick={handleClickButton} ref={ref} {...rest}>
       {children}
-    </ButtonEmotion>
+    </Button>
   )
-}
+})
 
-export default forwardRef(ModalButton)
+export default ModalButton

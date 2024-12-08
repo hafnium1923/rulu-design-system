@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import { InputProps } from '@/components/Input/Input.emotion'
+import type { InputProps } from '@/components/input/inputEmotion/Input.emotion'
 import { theme } from '@/styles/theme'
 
 export const getVariantStyling = (variant: Required<InputProps>['variant']) => {
@@ -29,7 +29,7 @@ export const labelStyle = css`
   font-size: 15px;
   font-weight: 500;
   line-height: 1.6;
-  color: ${theme.color.gray800};
+  color: ${theme.color.black700};
 `
 
 export const defaultInputStyle = css`

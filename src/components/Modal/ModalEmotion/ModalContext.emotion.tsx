@@ -1,21 +1,31 @@
-import { createContext, useEffect, useState, type PropsWithChildren } from 'react'
+import { createContext, useContext, useEffect, useState, type PropsWithChildren } from 'react'
 
 export interface ModalContextProps {
+  size: 'small' | 'medium' | 'large' | 'full'
+  position: 'top' | 'center' | 'bottom'
   isOpen: boolean
   onOpen: () => void
   onClose: () => void
   hideScrim: boolean
-  isScrimClosable: boolean
-  isEscClosable: boolean
+  isScrimCloseable: boolean
+  isEscCloseable: boolean
   preventScroll: boolean
 }
 
 export const ModalContext = createContext<ModalContextProps>({} as ModalContextProps)
 
+export const useModalContext = () => {
+  const context = useContext(ModalContext)
+
+  if (!context) {
+    throw new Error('useModalContext must be used within a ModalProvider')
+  }
+  return context
+}
+
 const ANIMATION_TIME = 300
 
-export const ModalProvider = (props: PropsWithChildren<ModalContextProps>) => {
-  const { isOpen, onClose, children, ...rest } = props
+export const ModalProvider = ({ isOpen, onClose, children, ...rest }: PropsWithChildren<ModalContextProps>) => {
   const [isMounted, setIsMounted] = useState(isOpen)
 
   const handleClose = () => {

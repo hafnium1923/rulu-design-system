@@ -1,35 +1,46 @@
 import { type PropsWithChildren } from 'react'
 
-import { ModalProvider, type ModalContextProps } from './ModalContext.emotion'
-import ModalLayout from './ModalLayout.emotion'
+import { type ModalContextProps, ModalProvider } from './ModalContext.emotion'
+import ModalLayout, { ModalBody, ModalFooter, ModalHeader } from './ModalLayout.emotion'
 import ModalButton from './ModalButton.emotion'
 
 interface ModalProps extends PropsWithChildren {
   context: Pick<ModalContextProps, 'isOpen' | 'onClose' | 'onOpen'>
+  size?: 'small' | 'medium' | 'large' | 'full'
+  position?: 'top' | 'center' | 'bottom'
   preventScroll?: boolean
   hideScrim?: boolean
-  isScrimClosable?: boolean
-  isEscClosable?: boolean
+  isScrimCloseable?: boolean
+  isEscCloseable?: boolean
 }
 
-const Modal = (props: ModalProps) => {
-  const {
-    context,
-    hideScrim = false,
-    isScrimClosable = true,
-    preventScroll = true,
-    isEscClosable = true,
-    children,
-  } = props
-
-  const providerValue = { isScrimClosable, preventScroll, hideScrim, isEscClosable, ...context } as const
+const Modal = ({
+  context,
+  size = 'medium',
+  position = 'center',
+  hideScrim = false,
+  isScrimCloseable = true,
+  isEscCloseable = true,
+  preventScroll = true,
+  children,
+}: ModalProps) => {
+  const providerValue = {
+    size,
+    position,
+    hideScrim,
+    isScrimCloseable,
+    isEscCloseable,
+    preventScroll,
+    ...context,
+  } as const
 
   return <ModalProvider {...providerValue}>{children}</ModalProvider>
 }
 
-const ModalEmotion = Object.assign(Modal, {
-  Layout: ModalLayout,
-  Button: ModalButton,
-})
+Modal.Layout = ModalLayout
+Modal.Button = ModalButton
+Modal.Header = ModalHeader
+Modal.Body = ModalBody
+Modal.Footer = ModalFooter
 
-export default ModalEmotion
+export default Modal
