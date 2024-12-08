@@ -1,0 +1,127 @@
+@use '../../../styles/scss/animation';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: var(--z-modal);
+
+  width: 100vw;
+  height: 100dvh;
+}
+
+.modal {
+  // Size
+  &-small {
+    width: 260px;
+    padding: 30px 40px;
+    border-radius: 14px;
+  }
+
+  &-medium {
+    width: 500px;
+    padding: 26px 30px;
+    border-radius: 10px;
+  }
+
+  &-large {
+    width: 750px;
+    padding: 16px 20px;
+    border-radius: 8px;
+  }
+
+  &-full {
+    width: 100dvw;
+    height: 100dvh;
+    padding: 40px;
+    border-radius: 0;
+  }
+
+  // Position
+  &-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-top {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-bottom {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // Component
+  &-layout {
+    button:focus-visible,
+    [href]:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--gray-300);
+      outline-offset: 4px;
+    }
+
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    box-sizing: border-box;
+    box-shadow:
+      0 0 1px #1b1d1f33,
+      0 15px 25px #1b1d1f33,
+      0 5px 10px #1b1d1f1f;
+
+    max-height: 60dvh;
+
+    background-color: var(--white);
+    color: inherit;
+
+    opacity: 0;
+    animation: fadeIn 0.2s ease-in 0.05s forwards;
+  }
+
+  &-header {
+    font-size: 24px;
+    font-weight: 700;
+    white-space: pre-wrap;
+  }
+
+  &-body {
+    font-size: 18px;
+    font-weight: 400;
+    white-space: pre-line;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  &-footer {
+    padding-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  &-scrim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-background);
+
+    width: 100dvw;
+    height: 100dvh;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
