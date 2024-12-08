@@ -1,0 +1,12 @@
+@use './color.scss' as *;
+@use './z-index.scss' as *;
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+
+  @each $name, $z-index in $z-indexes {
+    --z-#{$name}: #{$z-index};
+  }
+}
