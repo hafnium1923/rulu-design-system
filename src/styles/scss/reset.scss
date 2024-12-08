@@ -141,8 +141,3 @@ a,
 button {
   cursor: pointer;
 }
-
-a:not(:disabled),
-button:not(:disabled) {
-  color: black;
-}

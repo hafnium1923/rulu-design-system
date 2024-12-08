@@ -2,7 +2,8 @@ import React from "react";
 import { Global } from "@emotion/react";
 import type { Preview } from "@storybook/react";
 import { globalReset } from "../src/styles";
-
+import "../src/styles/scss/reset.scss";
+import "../src/styles/scss/global.scss";
 const preview: Preview = {
   parameters: {
     controls: {
