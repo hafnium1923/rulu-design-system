@@ -1,12 +1,15 @@
 import { type PropsWithChildren } from "react";
 
-import { type ModalContextProps, ModalProvider } from "./ModalContext.emotion";
 import ModalLayout, {
   ModalBody,
   ModalFooter,
   ModalHeader,
 } from "./ModalLayout.emotion";
 import ModalButton from "./ModalButton.emotion";
+import {
+  type ModalContextProps,
+  ModalProvider,
+} from "@/components/modal/ModalContext";
 
 interface ModalProps extends PropsWithChildren {
   context: Pick<ModalContextProps, "isOpen" | "onClose" | "onOpen">;

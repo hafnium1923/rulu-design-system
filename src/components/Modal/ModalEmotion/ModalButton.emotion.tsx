@@ -3,7 +3,7 @@ import { type ForwardedRef, forwardRef, type MouseEvent } from "react";
 import Button, {
   type ButtonProps,
 } from "@/components/button/buttonEmotion/Button.emotion";
-import { useModalContext } from "./ModalContext.emotion";
+import { useModalContext } from "@/components/modal/ModalContext";
 
 interface ModalButtonProps extends ButtonProps {
   act?: "close" | "open";

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 import { animation, theme } from "@/styles";
-import type { ModalContextProps } from "./ModalContext.emotion";
+import type { ModalContextProps } from "@/components/modal/ModalContext";
 
 export const getSizeStyling = (size: Required<ModalContextProps>["size"]) => {
   const style = {
@@ -105,11 +105,11 @@ export const header = css`
 `;
 
 export const body = css`
+  flex: 1;
   height: 100%;
   font-size: 18px;
   font-weight: 400;
   white-space: pre-line;
-  flex: 1;
   overflow-y: scroll;
 `;
 

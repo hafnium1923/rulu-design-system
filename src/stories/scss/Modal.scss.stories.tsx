@@ -1,8 +1,9 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import { useToggle } from "@/hooks/useToggle";
+import type { ModalContextProps } from "@/components/modal/ModalContext";
 import Button from "@/components/button/buttonSCSS/Button.scss";
 import Modal from "@/components/modal/modalSCSS/Modal.scss";
-import type { ModalContextProps } from "@/components/modal/modalSCSS/ModalContext.scss";
-import { useToggle } from "@/hooks/useToggle";
-import type { Meta, StoryObj } from "@storybook/react";
 
 /**
  * 공용 모달 컴포넌트 - scss.Ver

@@ -17,8 +17,8 @@
   // Size
   &-small {
     width: 260px;
-    padding: 30px 40px;
-    border-radius: 14px;
+    padding: 16px 20px;
+    border-radius: 8px;
   }
 
   &-medium {
@@ -29,8 +29,8 @@
 
   &-large {
     width: 750px;
-    padding: 16px 20px;
-    border-radius: 8px;
+    padding: 30px 40px;
+    border-radius: 14px;
   }
 
   &-full {
@@ -97,11 +97,12 @@
   }
 
   &-body {
+    flex: 1;
+    height: 100%;
     font-size: 18px;
     font-weight: 400;
     white-space: pre-line;
-    flex: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 
   &-footer {
@@ -115,13 +116,13 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: var(--z-background);
+    z-index: var(--z-backdrop);
 
     width: 100dvw;
     height: 100dvh;
 
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(3px);
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.2s ease-in;
   }
 }

@@ -7,8 +7,8 @@ import { createPortal } from "react-dom";
 
 import { useClickOutside } from "@/hooks";
 import * as styles from "./modal.emotion.style";
-import { useModalContext } from "./ModalContext.emotion";
-import useModalKeyboard from "../useModalKeyboard";
+import { useModalContext } from "@/components/modal/ModalContext";
+import useModalKeyboard from "@/components/modal/useModalKeyboard";
 
 const ModalLayout = ({
   children,

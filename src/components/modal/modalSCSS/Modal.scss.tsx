@@ -7,7 +7,10 @@ import {
   ModalFooter,
 } from "./ModalLayout.scss";
 import ModalButton from "./ModalButton.scss";
-import { type ModalContextProps, ModalProvider } from "./ModalContext.scss";
+import {
+  ModalProvider,
+  type ModalContextProps,
+} from "@/components/modal/ModalContext";
 
 interface ModalProps extends PropsWithChildren {
   context: Pick<ModalContextProps, "isOpen" | "onClose" | "onOpen">;

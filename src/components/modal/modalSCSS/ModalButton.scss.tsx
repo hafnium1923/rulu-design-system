@@ -1,6 +1,6 @@
 import { type ForwardedRef, forwardRef, type MouseEvent } from "react";
 
-import { useModalContext } from "./ModalContext.scss";
+import { useModalContext } from "@/components/modal/ModalContext";
 import Button, {
   type ButtonProps,
 } from "@/components/button/buttonSCSS/Button.scss";

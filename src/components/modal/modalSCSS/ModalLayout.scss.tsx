@@ -3,13 +3,12 @@ import {
   type HTMLAttributes,
   useRef,
 } from "react";
-
 import { createPortal } from "react-dom";
 
-import styles from "./modal.module.scss";
 import { useClickOutside } from "@/hooks";
-import { useModalContext } from "./ModalContext.scss";
-import useModalKeyboard from "../useModalKeyboard";
+import * as styles from "./modal.module.scss";
+import { useModalContext } from "@/components/modal/ModalContext";
+import useModalKeyboard from "@/components/modal/useModalKeyboard";
 
 const ModalLayout = ({
   children,
@@ -37,7 +36,7 @@ const ModalLayout = ({
         createPortal(
           <>
             {!hideScrim && <Scrim />}
-            <div aria-modal={isOpen} className={styles["container"]}>
+            <div aria-modal={isOpen} className={styles.container}>
               <div
                 ref={ref}
                 className={`${styles["modal-layout"]} ${styles[`modal-${size}`]} ${styles[`modal-${position}`]} ${className}`}

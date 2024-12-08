@@ -1,8 +1,9 @@
-import Button from "@/components/button/buttonEmotion/Button.emotion";
-import Modal from "@/components/modal/modalEmotion/Modal.emotion";
-import type { ModalContextProps } from "@/components/modal/modalEmotion/ModalContext.emotion";
-import { useToggle } from "@/hooks/useToggle";
 import type { Meta, StoryObj } from "@storybook/react";
+
+import { useToggle } from "@/hooks/useToggle";
+import Button from "@/components/button/buttonEmotion/Button.emotion";
+import type { ModalContextProps } from "@/components/modal/ModalContext";
+import Modal from "@/components/modal/modalEmotion/Modal.emotion";
 
 /**
  * 공용 모달 컴포넌트 - emotion.Ver
