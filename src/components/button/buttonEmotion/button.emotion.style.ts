@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-import { theme } from "@/styles/theme";
+import { theme } from "@/styles/emotion";
 import { type ButtonProps } from "./Button.emotion";
 
 export const getVariantStyling = (

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-import { animation, theme } from "@/styles";
+import { animation, theme } from "@/styles/emotion";
 import type { ModalContextProps } from "@/components/modal/ModalContext";
 
 export const getSizeStyling = (size: Required<ModalContextProps>["size"]) => {

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 import type { InputProps } from "@/components/input/inputEmotion/Input.emotion";
-import { theme } from "@/styles/theme";
+import { theme } from "@/styles/emotion";
 
 export const getVariantStyling = (variant: Required<InputProps>["variant"]) => {
   const style = {
