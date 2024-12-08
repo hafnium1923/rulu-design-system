@@ -1,57 +1,59 @@
-import { css } from '@emotion/react'
+import { css } from "@emotion/react";
 
-import { animation, theme } from '@/styles'
-import type { ModalContextProps } from './ModalContext.emotion'
+import { animation, theme } from "@/styles";
+import type { ModalContextProps } from "./ModalContext.emotion";
 
-export const getSizeStyling = (size: Required<ModalContextProps>['size']) => {
+export const getSizeStyling = (size: Required<ModalContextProps>["size"]) => {
   const style = {
     large: css({
-      width: '750px',
-      padding: '30px 40px',
-      borderRadius: '14px',
+      width: "750px",
+      padding: "30px 40px",
+      borderRadius: "14px",
     }),
     medium: css({
-      width: '500px',
-      padding: '26px 30px',
-      borderRadius: '10px',
+      width: "500px",
+      padding: "26px 30px",
+      borderRadius: "10px",
     }),
     small: css({
-      width: '260px',
-      padding: '16px 20px',
-      borderRadius: '8px',
+      width: "260px",
+      padding: "16px 20px",
+      borderRadius: "8px",
     }),
     full: css({
-      width: '100dvw',
-      height: '100dvh',
-      padding: '40px',
+      width: "100dvw",
+      height: "100dvh",
+      padding: "40px",
       borderRadius: 0,
     }),
-  }
+  };
 
-  return style[size]
-}
+  return style[size];
+};
 
-export const getPositionStyling = (position: Required<ModalContextProps>['position']) => {
+export const getPositionStyling = (
+  position: Required<ModalContextProps>["position"]
+) => {
   const style = {
     center: css({
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
     }),
     top: css({
-      top: '10%',
-      left: '50%',
-      transform: 'translateX(-50%)',
+      top: "10%",
+      left: "50%",
+      transform: "translateX(-50%)",
     }),
     bottom: css({
-      bottom: '10%',
-      left: '50%',
-      transform: 'translateX(-50%)',
+      bottom: "10%",
+      left: "50%",
+      transform: "translateX(-50%)",
     }),
-  }
+  };
 
-  return style[position]
-}
+  return style[position];
+};
 
 export const container = css`
   display: flex;
@@ -64,7 +66,7 @@ export const container = css`
 
   width: 100vw;
   height: 100dvh;
-`
+`;
 
 export const layout = css`
   button:focus-visible,
@@ -94,13 +96,13 @@ export const layout = css`
 
   opacity: 0;
   animation: ${animation.fadeIn} 0.2s ease-in 0.05s forwards;
-`
+`;
 
 export const header = css`
   font-size: 24px;
   font-weight: 700;
   white-space: pre-wrap;
-`
+`;
 
 export const body = css`
   height: 100%;
@@ -109,14 +111,14 @@ export const body = css`
   white-space: pre-line;
   flex: 1;
   overflow-y: scroll;
-`
+`;
 
 export const footer = css`
   padding-top: 30px;
   display: flex;
   justify-content: flex-end;
   gap: 20px;
-`
+`;
 
 export const scrim = css`
   position: fixed;
@@ -130,4 +132,4 @@ export const scrim = css`
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
   animation: ${animation.fadeIn} 0.2s ease-in;
-`
+`;

@@ -1,9 +1,9 @@
-import { css } from '@emotion/react'
+import { css } from "@emotion/react";
 
-import type { InputProps } from '@/components/input/inputEmotion/Input.emotion'
-import { theme } from '@/styles/theme'
+import type { InputProps } from "@/components/input/inputEmotion/Input.emotion";
+import { theme } from "@/styles/theme";
 
-export const getVariantStyling = (variant: Required<InputProps>['variant']) => {
+export const getVariantStyling = (variant: Required<InputProps>["variant"]) => {
   const style = {
     outlined: css`
       border-radius: 9px;
@@ -15,14 +15,14 @@ export const getVariantStyling = (variant: Required<InputProps>['variant']) => {
     `,
 
     none: css``,
-  }
+  };
 
-  return style[variant]
-}
+  return style[variant];
+};
 
 export const containerStyle = css`
   width: 100%;
-`
+`;
 export const labelStyle = css`
   display: inline-block;
   padding: 2px 0;
@@ -30,7 +30,7 @@ export const labelStyle = css`
   font-weight: 500;
   line-height: 1.6;
   color: ${theme.color.black700};
-`
+`;
 
 export const defaultInputStyle = css`
   width: 100%;
@@ -38,4 +38,4 @@ export const defaultInputStyle = css`
   padding: 0 12px;
   height: 48px;
   box-sizing: border-box;
-`
+`;

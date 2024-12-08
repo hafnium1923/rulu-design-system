@@ -1,7 +1,7 @@
-import React from 'react'
-import { Global } from '@emotion/react'
-import type { Preview } from '@storybook/react'
-import { globalReset } from '../src/styles'
+import React from "react";
+import { Global } from "@emotion/react";
+import type { Preview } from "@storybook/react";
+import { globalReset } from "../src/styles";
 
 const preview: Preview = {
   parameters: {
@@ -12,7 +12,7 @@ const preview: Preview = {
       },
     },
   },
-}
+};
 
 export const decorators = [
   (Story) => (
@@ -21,6 +21,6 @@ export const decorators = [
       <Story />
     </>
   ),
-]
+];
 
-export default preview
+export default preview;

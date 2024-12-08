@@ -1,4 +1,4 @@
-import { css } from '@emotion/react'
+import { css } from "@emotion/react";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
     >
       Hello World!
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

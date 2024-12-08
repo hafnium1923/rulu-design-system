@@ -1,21 +1,37 @@
 //* react core
-import { type ComponentPropsWithoutRef, type HTMLAttributes, useRef } from 'react'
+import {
+  type ComponentPropsWithoutRef,
+  type HTMLAttributes,
+  useRef,
+} from "react";
 
-import { createPortal } from 'react-dom'
+import { createPortal } from "react-dom";
 
 //* internal
-import styles from './modal.module.scss'
-import { useClickOutside } from '@/hooks'
-import { useModalContext } from './ModalContext.scss'
-import useModalKeyboard from '../useModalKeyboard'
+import styles from "./modal.module.scss";
+import { useClickOutside } from "@/hooks";
+import { useModalContext } from "./ModalContext.scss";
+import useModalKeyboard from "../useModalKeyboard";
 
-const ModalLayout = ({ children, className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const { size, position, isOpen, hideScrim, isScrimCloseable, isEscCloseable, preventScroll, onClose } =
-    useModalContext()
+const ModalLayout = ({
+  children,
+  className,
+  ...rest
+}: ComponentPropsWithoutRef<"div">) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const {
+    size,
+    position,
+    isOpen,
+    hideScrim,
+    isScrimCloseable,
+    isEscCloseable,
+    preventScroll,
+    onClose,
+  } = useModalContext();
 
-  isScrimCloseable && useClickOutside(ref, onClose)
-  useModalKeyboard(ref, onClose, preventScroll, isEscCloseable)
+  isScrimCloseable && useClickOutside(ref, onClose);
+  useModalKeyboard(ref, onClose, preventScroll, isEscCloseable);
 
   return (
     <>
@@ -23,10 +39,10 @@ const ModalLayout = ({ children, className, ...rest }: ComponentPropsWithoutRef<
         createPortal(
           <>
             {!hideScrim && <Scrim />}
-            <div aria-modal={isOpen} className={styles['container']}>
+            <div aria-modal={isOpen} className={styles["container"]}>
               <div
                 ref={ref}
-                className={`${styles['modal-layout']} ${styles[`modal-${size}`]} ${styles[`modal-${position}`]} ${className}`}
+                className={`${styles["modal-layout"]} ${styles[`modal-${size}`]} ${styles[`modal-${position}`]} ${className}`}
                 {...rest}
               >
                 {children}
@@ -36,33 +52,49 @@ const ModalLayout = ({ children, className, ...rest }: ComponentPropsWithoutRef<
           document.body
         )}
     </>
-  )
-}
+  );
+};
 
-const ModalHeader = ({ children, className, ...rest }: HTMLAttributes<HTMLHeadElement>) => {
+const ModalHeader = ({
+  children,
+  className,
+  ...rest
+}: HTMLAttributes<HTMLHeadElement>) => {
   return (
-    <header className={`${styles['modal-header']} ${className}`} {...rest}>
+    <header className={`${styles["modal-header"]} ${className}`} {...rest}>
       {children}
     </header>
-  )
-}
+  );
+};
 
-const ModalBody = ({ children, className, ...rest }: HTMLAttributes<HTMLDivElement>) => {
+const ModalBody = ({
+  children,
+  className,
+  ...rest
+}: HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={`${styles['modal-body']} ${className}`} {...rest}>
+    <div className={`${styles["modal-body"]} ${className}`} {...rest}>
       {children}
     </div>
-  )
-}
+  );
+};
 
-const ModalFooter = ({ children, className, ...rest }: HTMLAttributes<HTMLDivElement>) => {
+const ModalFooter = ({
+  children,
+  className,
+  ...rest
+}: HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div data-part='modal-footer' className={`${styles['modal-footer']} ${className}`} {...rest}>
+    <div
+      data-part="modal-footer"
+      className={`${styles["modal-footer"]} ${className}`}
+      {...rest}
+    >
       {children}
     </div>
-  )
-}
+  );
+};
 
-const Scrim = () => <div className={styles['modal-scrim']} />
+const Scrim = () => <div className={styles["modal-scrim"]} />;
 
-export { ModalLayout, ModalHeader, ModalBody, ModalFooter }
+export { ModalLayout, ModalHeader, ModalBody, ModalFooter };

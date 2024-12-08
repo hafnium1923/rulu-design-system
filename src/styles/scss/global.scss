@@ -1,5 +1,5 @@
-@use './color.scss' as *;
-@use './z-index.scss' as *;
+@use "./color.scss" as *;
+@use "./z-index.scss" as *;
 
 :root {
   @each $name, $color in $colors {

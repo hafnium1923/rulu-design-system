@@ -1,13 +1,13 @@
 //* TOKEN
 $typography-size-map: (
-  'title_lg_36': 36px,
-  'title_sm_30': 30px,
-  'heading_lg_24': 24px,
-  'heading_sm_20': 20px,
-  'body_lg_18': 18px,
-  'body_sm_16': 16px,
-  'caption_lg_14': 14px,
-  'caption_sm_12': 12px,
+  "title_lg_36": 36px,
+  "title_sm_30": 30px,
+  "heading_lg_24": 24px,
+  "heading_sm_20": 20px,
+  "body_lg_18": 18px,
+  "body_sm_16": 16px,
+  "caption_lg_14": 14px,
+  "caption_sm_12": 12px,
 );
 
 @function typography-size($name) {
@@ -15,7 +15,7 @@ $typography-size-map: (
 }
 
 $typography-line-height-map: (
-  'default': 140%,
+  "default": 140%,
 );
 
 @function typography-line-height($name) {
@@ -23,9 +23,9 @@ $typography-line-height-map: (
 }
 
 $typography-weight-map: (
-  'bold': 700,
-  'medium': 500,
-  'regular': 400,
+  "bold": 700,
+  "medium": 500,
+  "regular": 400,
 );
 
 @function typography-weight($name) {
@@ -36,143 +36,143 @@ $typography-weight-map: (
 
 //* Title
 @mixin title-lg-36b {
-  font-size: typography-size('title_lg_36');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('bold');
+  font-size: typography-size("title_lg_36");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("bold");
 }
 
 @mixin title-lg-36m {
-  font-size: typography-size('title_lg_36');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('medium');
+  font-size: typography-size("title_lg_36");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("medium");
 }
 
 @mixin title-lg-36r {
-  font-size: typography-size('title_lg_36');
-  line-height: typography-line-height('default');
+  font-size: typography-size("title_lg_36");
+  line-height: typography-line-height("default");
 }
 
 @mixin title-sm-30b {
-  font-size: typography-size('title_sm_30');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('bold');
+  font-size: typography-size("title_sm_30");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("bold");
 }
 
 @mixin title-sm-30m {
-  font-size: typography-size('title_sm_30');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('medium');
+  font-size: typography-size("title_sm_30");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("medium");
 }
 
 @mixin title-sm-30r {
-  font-size: typography-size('title_sm_30');
-  line-height: typography-line-height('default');
+  font-size: typography-size("title_sm_30");
+  line-height: typography-line-height("default");
 }
 
 //* Heading --------------------------------------------------
 
 @mixin heading-lg-24b {
-  font-size: typography-size('heading_lg_24');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('bold');
+  font-size: typography-size("heading_lg_24");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("bold");
 }
 
 @mixin heading-lg-24m {
-  font-size: typography-size('heading_lg_24');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('medium');
+  font-size: typography-size("heading_lg_24");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("medium");
 }
 
 @mixin heading-lg-24r {
-  font-size: typography-size('heading_lg_24');
-  line-height: typography-line-height('default');
+  font-size: typography-size("heading_lg_24");
+  line-height: typography-line-height("default");
 }
 
 @mixin heading-sm-20b {
-  font-size: typography-size('heading_sm_20');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('bold');
+  font-size: typography-size("heading_sm_20");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("bold");
 }
 
 @mixin heading-sm-20m {
-  font-size: typography-size('heading_sm_20');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('medium');
+  font-size: typography-size("heading_sm_20");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("medium");
 }
 
 @mixin heading-sm-20r {
-  font-size: typography-size('heading_sm_20');
-  line-height: typography-line-height('default');
+  font-size: typography-size("heading_sm_20");
+  line-height: typography-line-height("default");
 }
 
 //* Body --------------------------------------------------
 
 @mixin body_lg_18b {
-  font-size: typography-size('body_lg_18');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('bold');
+  font-size: typography-size("body_lg_18");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("bold");
 }
 
 @mixin body_lg_18m {
-  font-size: typography-size('body_lg_18');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('medium');
+  font-size: typography-size("body_lg_18");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("medium");
 }
 
 @mixin body_lg_18r {
-  font-size: typography-size('body_lg_18');
-  line-height: typography-line-height('default');
+  font-size: typography-size("body_lg_18");
+  line-height: typography-line-height("default");
 }
 
 @mixin body_sm_16b {
-  font-size: typography-size('body_sm_16');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('bold');
+  font-size: typography-size("body_sm_16");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("bold");
 }
 
 @mixin body_sm_16m {
-  font-size: typography-size('body_sm_16');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('medium');
+  font-size: typography-size("body_sm_16");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("medium");
 }
 
 @mixin body_sm_16r {
-  font-size: typography-size('body_sm_16');
-  line-height: typography-line-height('default');
+  font-size: typography-size("body_sm_16");
+  line-height: typography-line-height("default");
 }
 
 //* Caption --------------------------------------------------
 
 @mixin caption-lg-14b {
-  font-size: typography-size('caption_lg_14');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('bold');
+  font-size: typography-size("caption_lg_14");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("bold");
 }
 
 @mixin caption-lg-14m {
-  font-size: typography-size('caption_lg_14');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('medium');
+  font-size: typography-size("caption_lg_14");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("medium");
 }
 
 @mixin caption-lg-14r {
-  font-size: typography-size('caption_lg_14');
-  line-height: typography-line-height('default');
+  font-size: typography-size("caption_lg_14");
+  line-height: typography-line-height("default");
 }
 
 @mixin caption-sm-12b {
-  font-size: typography-size('caption_sm_12');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('bold');
+  font-size: typography-size("caption_sm_12");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("bold");
 }
 
 @mixin caption-sm-12m {
-  font-size: typography-size('caption_sm_12');
-  line-height: typography-line-height('default');
-  font-weight: typography-weight('medium');
+  font-size: typography-size("caption_sm_12");
+  line-height: typography-line-height("default");
+  font-weight: typography-weight("medium");
 }
 
 @mixin caption-sm-12r {
-  font-size: typography-size('caption_sm_12');
-  line-height: typography-line-height('default');
+  font-size: typography-size("caption_sm_12");
+  line-height: typography-line-height("default");
 }

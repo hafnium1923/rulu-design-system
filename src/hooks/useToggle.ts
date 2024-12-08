@@ -1,5 +1,5 @@
 //* react core
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from "react";
 
 /**
  * @param {boolean} [preventClose=false]  - 닫기 방지 여부
@@ -15,35 +15,40 @@ import { useCallback, useRef, useState } from 'react'
  */
 
 export const useToggle = (preventClose = false, defaultState?: boolean) => {
-  const [isOpen, setIsOpen] = useState<boolean>(defaultState ?? false)
-  const [tryClose, setTryClose] = useState(false)
-  const hasUserInteraction = useRef(false)
+  const [isOpen, setIsOpen] = useState<boolean>(defaultState ?? false);
+  const [tryClose, setTryClose] = useState(false);
+  const hasUserInteraction = useRef(false);
 
   const onOpen = () => {
-    setIsOpen(true)
-  }
+    setIsOpen(true);
+  };
 
   const handleClose = () => {
     if (!preventClose || hasUserInteraction.current) {
-      setIsOpen(false)
-      setTryClose(false)
-      hasUserInteraction.current = false
-      return
+      setIsOpen(false);
+      setTryClose(false);
+      hasUserInteraction.current = false;
+      return;
     }
 
-    setTryClose(true)
-  }
+    setTryClose(true);
+  };
 
   //* 진짜 닫기
   const handleConfirmClose = () => {
-    hasUserInteraction.current = true
-    handleClose()
-  }
+    hasUserInteraction.current = true;
+    handleClose();
+  };
 
   //* 닫기 취소
   const handleCancelClose = () => {
-    setTryClose(false)
-  }
+    setTryClose(false);
+  };
 
-  return { isOpen, onOpen, onClose: handleClose, closeGuard: { tryClose, handleConfirmClose, handleCancelClose } }
-}
+  return {
+    isOpen,
+    onOpen,
+    onClose: handleClose,
+    closeGuard: { tryClose, handleConfirmClose, handleCancelClose },
+  };
+};

@@ -1,22 +1,22 @@
-import { RuleSetRule } from 'webpack'
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
-import type { StorybookConfig } from '@storybook/react-webpack5'
-import path from 'path'
-require('../babel.config')
+import { RuleSetRule } from "webpack";
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+import type { StorybookConfig } from "@storybook/react-webpack5";
+import path from "path";
+require("../babel.config");
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
-    '@storybook/addon-webpack5-compiler-swc',
-    '@storybook/addon-onboarding',
-    '@storybook/addon-essentials',
-    '@chromatic-com/storybook',
-    '@storybook/addon-interactions',
-    '@storybook/addon-controls',
-    '@storybook/addon-webpack5-compiler-babel',
+    "@storybook/addon-webpack5-compiler-swc",
+    "@storybook/addon-onboarding",
+    "@storybook/addon-essentials",
+    "@chromatic-com/storybook",
+    "@storybook/addon-interactions",
+    "@storybook/addon-controls",
+    "@storybook/addon-webpack5-compiler-babel",
   ],
   framework: {
-    name: '@storybook/react-webpack5',
+    name: "@storybook/react-webpack5",
     options: {
       builder: {
         useSWC: true,
@@ -24,35 +24,41 @@ const config: StorybookConfig = {
     },
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: "tag",
   },
   swc: () => ({
     jsc: {
       transform: {
         react: {
-          runtime: 'automatic',
+          runtime: "automatic",
         },
       },
     },
   }),
-  staticDirs: [path.join(__dirname, '..', 'public')],
+  staticDirs: [path.join(__dirname, "..", "public")],
   webpackFinal: async (config) => {
-    config.resolve!.plugins = [new TsconfigPathsPlugin()]
+    config.resolve!.plugins = [new TsconfigPathsPlugin()];
 
     const assetRules = config.module?.rules?.find((rule) => {
-      const test = (rule as { test: RegExp }).test
+      const test = (rule as { test: RegExp }).test;
 
-      return test.test('.svg')
-    }) as RuleSetRule
+      return test.test(".svg");
+    }) as RuleSetRule;
 
-    assetRules.exclude = /\.svg$/
+    assetRules.exclude = /\.svg$/;
 
     config.module?.rules?.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack', 'url-loader'],
-    })
+      use: ["@svgr/webpack", "url-loader"],
+    });
 
-    return config
+    config.module?.rules?.push({
+      test: /\.scss$/,
+      use: ["style-loader", "css-loader", "sass-loader"],
+      include: path.resolve(__dirname, "../"),
+    });
+
+    return config;
   },
-}
-export default config
+};
+export default config;

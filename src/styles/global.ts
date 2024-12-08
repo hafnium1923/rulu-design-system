@@ -1,4 +1,4 @@
-import { css } from '@emotion/react'
+import { css } from "@emotion/react";
 
 export const globalReset = css`
   html,
@@ -81,12 +81,12 @@ export const globalReset = css`
     font-size: 100%;
     font: inherit;
     font-family:
-      'GamtanRoad',
+      "GamtanRoad",
       system-ui,
       -apple-system,
       BlinkMacSystemFont,
-      'Open Sans',
-      'Helvetica Neue',
+      "Open Sans",
+      "Helvetica Neue",
       sans-serif;
     vertical-align: baseline;
   }
@@ -118,7 +118,7 @@ export const globalReset = css`
   blockquote:after,
   q:before,
   q:after {
-    content: '';
+    content: "";
     content: none;
   }
   table {
@@ -129,6 +129,6 @@ export const globalReset = css`
   body:has(dialog) {
     overflow: hidden;
   }
-`
+`;
 
-export default globalReset
+export default globalReset;
