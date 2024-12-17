@@ -1,0 +1,96 @@
+.container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 8px;
+  min-height: 8px;
+
+  background-color: var(--badge-color, "#000000");
+  border-radius: 10px;
+  color: var(--badge-text-color, "#ffffff");
+  transition: all 0.3s;
+
+  &.content {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    padding: 0px 6px;
+    min-width: 20px;
+    min-height: 20px;
+    box-sizing: border-box;
+  }
+
+  &.rectangle {
+    &.top {
+      &-right {
+        transform: scale(1) translate(50%, -50%);
+        transform-origin: 100% 0%;
+        top: -4px;
+        right: -4px;
+      }
+
+      &-left {
+        transform: scale(1) translate(-50%, -50%);
+        transform-origin: 0% 0%;
+        top: -4px;
+        left: -4px;
+      }
+    }
+
+    &.bottom {
+      &-right {
+        transform: scale(1) translate(50%, 50%);
+        transform-origin: 100% 100%;
+        bottom: -4px;
+        right: -4px;
+      }
+      &-left {
+        transform: scale(1) translate(-50%, 50%);
+        transform-origin: 0% 0%;
+        bottom: -4px;
+        left: -4px;
+      }
+    }
+  }
+
+  &.circle {
+    &.top {
+      &-right {
+        transform: scale(1) translate(50%, -50%);
+        transform-origin: 100% 0%;
+        top: 14%;
+        right: 14%;
+      }
+
+      &-left {
+        transform: scale(1) translate(-50%, -50%);
+        transform-origin: 0% 0%;
+        top: 14%;
+        left: 14%;
+      }
+    }
+
+    &.bottom {
+      &-right {
+        transform: scale(1) translate(50%, 50%);
+        transform-origin: 100% 100%;
+        bottom: 14%;
+        right: 14%;
+      }
+      &-left {
+        transform: scale(1) translate(-50%, 50%);
+        transform-origin: 0% 0%;
+        bottom: 14%;
+        left: 14%;
+      }
+    }
+  }
+}
