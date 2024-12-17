@@ -13,6 +13,12 @@ export interface InputProps extends ComponentPropsWithoutRef<"input"> {
   variant?: "outlined" | "filled" | "none";
 }
 
+/**
+ * Input 컴포넌트, 기본 input의 모든 속성 사용 가능
+ *
+ * @param {ReactNode} label - Input 좌측 상단에 나오는 Input컴포넌트의 라벨
+ * @param {"outlined" | "filled" | "none"} [variant='outline'] - Input 컴포넌트의 스타일링 방법.
+ */
 const Input = forwardRef(
   (props: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
     const {
