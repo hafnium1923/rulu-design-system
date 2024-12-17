@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Button, {
-  ButtonProps,
+  type ButtonProps,
 } from "@/components/button/buttonSCSS/Button.scss";
 
 /**

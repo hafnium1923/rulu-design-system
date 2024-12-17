@@ -1,20 +1,16 @@
-import {
-  type ComponentPropsWithoutRef,
-  type HTMLAttributes,
-  useRef,
-} from "react";
+import { type HTMLAttributes, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import { useClickOutside } from "@/hooks";
+import { useModalContext } from "../ModalContext";
+import useModalKeyboard from "../useModalKeyboard";
 import * as styles from "./modal.module.scss";
-import { useModalContext } from "@/components/modal/ModalContext";
-import useModalKeyboard from "@/components/modal/useModalKeyboard";
 
 const ModalLayout = ({
   children,
   className,
   ...rest
-}: ComponentPropsWithoutRef<"div">) => {
+}: HTMLAttributes<HTMLDivElement>) => {
   const ref = useRef<HTMLDivElement>(null);
   const {
     size,

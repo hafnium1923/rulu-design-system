@@ -6,7 +6,7 @@ import Button from "@/components/button/buttonSCSS/Button.scss";
 import Modal from "@/components/modal/modalSCSS/Modal.scss";
 
 /**
- * 공용 모달 컴포넌트 - scss.Ver
+ * 공용 Modal 컴포넌트 - scss.Ver
  * 모달, 레이아웃, 헤더, 바디, 푸터를 조합하여 사용
  */
 const meta = {
