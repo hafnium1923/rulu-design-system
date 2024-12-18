@@ -1,0 +1,63 @@
+@use "@/styles/scss/_index.scss" as *;
+
+.pins-container {
+  --color-error: var(--red-500);
+
+  label {
+    display: flex;
+    gap: 8px;
+
+    input {
+      @include body_lg_18r;
+      color: var(--text-color, var(--black-700));
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      border: 1px solid var(--border-color, var(--gray-200));
+      border-radius: 5px;
+      position: relative;
+
+      &:focus {
+        outline: 2px solid var(--border-color, var(--black-600));
+        outline-offset: -2px;
+        border-color: transparent;
+      }
+
+      &[type="password"] {
+        color: var(--black-500);
+      }
+
+      &.error {
+        border-color: var(--color-error);
+
+        &:focus {
+          outline: 2px solid var(--color-error);
+        }
+      }
+    }
+  }
+  &[data-size="sm"] {
+    input {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &[data-size="md"] {
+    input {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &[data-size="lg"] {
+    input {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .error {
+    @include caption-lg-14r;
+    color: var(--color-error);
+    margin-top: 8px;
+  }
+}
