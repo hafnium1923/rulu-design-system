@@ -1,0 +1,230 @@
+.container {
+  position: fixed;
+  z-index: 1200;
+
+  &-open {
+    inset: 0px;
+  }
+}
+
+.layout {
+  position: fixed;
+  z-index: 1200;
+  flex-direction: column;
+  background-color: var(--white);
+  overflow-y: auto;
+  display: flex;
+
+  &-outline {
+    box-shadow:
+      0px 8px 10px -5px rgba(0, 0, 0, 0.2),
+      0px 16px 24px 2px rgba(0, 0, 0, 0.14),
+      0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+  }
+
+  &-inline {
+    outline: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  &-left {
+    top: 0;
+    height: 100%;
+
+    &-true {
+      left: 0;
+    }
+
+    &-false {
+      left: calc(-1 * var(--drawer-width, 100%) + var(--drawer-handle, -50px));
+    }
+  }
+
+  &-right {
+    top: 0;
+    height: 100%;
+
+    &-true {
+      right: 0;
+    }
+
+    &-false {
+      right: calc(-1 * var(--drawer-width, 100%) + var(--drawer-handle, -50px));
+    }
+  }
+
+  &-top {
+    height: auto;
+    left: 0;
+    right: 0;
+
+    &-true {
+      top: 0;
+    }
+
+    &-false {
+      top: calc(-1 * var(--drawer-height, 100%) + var(--drawer-handle, -50px));
+    }
+  }
+
+  &-bottom {
+    height: auto;
+    top: auto;
+    left: 0;
+    right: 0;
+
+    &-true {
+      bottom: 0;
+    }
+
+    &-false {
+      bottom: calc(
+        -1 * var(--drawer-height, 100%) + var(--drawer-handle, -50px)
+      );
+    }
+  }
+}
+
+body.drawer-open {
+  &-left {
+    margin-left: var(--drawer-width, 0px) !important;
+  }
+
+  &-right {
+    margin-right: var(--drawer-width, 0px) !important;
+  }
+
+  &-top {
+    margin-top: var(--drawer-height, 0px) !important;
+  }
+
+  &-bottom {
+    margin-bottom: var(--drawer-height, 0px) !important;
+  }
+}
+
+body.drawer-close {
+  &-left {
+    margin-left: var(--drawer-handle, 0px) !important;
+  }
+
+  &-right {
+    margin-right: var(--drawer-handle, 0px) !important;
+  }
+
+  &-top {
+    margin-top: var(--drawer-handle, 0px) !important;
+  }
+
+  &-bottom {
+    margin-bottom: var(--drawer-handle, 0px) !important;
+  }
+}
+
+.open-animation {
+  &-left {
+    animation: openLeft 0.3s ease-in-out forwards;
+  }
+
+  &-right {
+    animation: openRight 0.3s ease-in-out forwards;
+  }
+
+  &-top {
+    animation: openUp 0.3s ease-in-out forwards;
+  }
+
+  &-bottom {
+    animation: openDown 0.3s ease-in-out forwards;
+  }
+}
+
+.close-animation {
+  &-left {
+    animation: closeLeft 0.3s ease-in-out forwards;
+  }
+
+  &-right {
+    animation: closeRight 0.3s ease-in-out forwards;
+  }
+
+  &-top {
+    animation: closeUp 0.3s ease-in-out forwards;
+  }
+
+  &-bottom {
+    animation: closeDown 0.3s ease-in-out forwards;
+  }
+}
+
+@keyframes openDown {
+  from {
+    transform: translateY(calc(100% - var(--drawer-handle, 0px)));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes openUp {
+  from {
+    transform: translateY(calc(-100% + var(--drawer-handle, 0px)));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes openRight {
+  from {
+    transform: translateX(calc(100% - var(--drawer-handle, 0px)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes openLeft {
+  from {
+    transform: translateX(calc(-100% + var(--drawer-handle, 0px)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes closeDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(100% - var(--drawer-handle, 0px)));
+  }
+}
+
+@keyframes closeUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% + var(--drawer-handle, 0px)));
+  }
+}
+
+@keyframes closeRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100% - var(--drawer-handle, 0px)));
+  }
+}
+
+@keyframes closeLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + var(--drawer-handle, 0px)));
+  }
+}
