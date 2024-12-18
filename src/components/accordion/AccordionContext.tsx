@@ -23,8 +23,11 @@ interface AccordionProviderProps {
 
 export const useAccordionContext = () => {
   const context = useContext(AccordionContext);
-  if (!context)
-    throw new Error("Accordion components must be used within an Accordion");
+
+  if (!context) {
+    throw new Error("useAccordionContext must be used within an Accordion");
+  }
+
   return context;
 };
 
