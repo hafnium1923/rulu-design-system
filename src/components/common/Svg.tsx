@@ -6,7 +6,7 @@ interface SvgProps extends HTMLAttributes<SVGElement> {
   fill?: string;
   stroke?: string;
   style?: CSSProperties;
-  size?: string;
+  size?: string | number;
   width?: string;
   height?: string;
 }
@@ -16,7 +16,7 @@ const Svg = ({ type, fill, stroke, style, size, ...rest }: SvgProps) => {
 
   const svgProps = {
     style,
-    ...(size ? { width: size, height: size } : {}),
+    ...(size ? { width: String(size), height: String(size) } : {}),
     ...(fill ? { fill } : {}),
     ...(stroke ? { stroke } : {}),
   };

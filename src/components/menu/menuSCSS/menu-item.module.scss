@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+
+  padding: 8px 26px;
+
+  cursor: pointer;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--gray-100);
+  }
+}
+
+.check {
+  position: absolute;
+  left: 10px;
+  top: calc(50% - 8px);
+}

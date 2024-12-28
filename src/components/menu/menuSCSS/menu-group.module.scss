@@ -1,0 +1,11 @@
+@use "@/styles/scss/_index.scss" as *;
+
+.container {
+  padding: 10px;
+  margin-top: 4px;
+}
+
+.text {
+  margin-bottom: 2px;
+  @include body_sm_16b;
+}

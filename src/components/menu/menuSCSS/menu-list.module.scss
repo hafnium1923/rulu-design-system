@@ -1,0 +1,61 @@
+.container {
+  position: absolute;
+  z-index: 1;
+
+  max-height: 200px;
+  width: 280px;
+  overflow-y: auto;
+
+  background-color: var(--white);
+
+  border: 1px solid var(--gray-400);
+  border-radius: 6px;
+
+  &-top {
+    &-right {
+      bottom: 100%;
+    }
+    &-left {
+      bottom: 100%;
+      right: 0;
+    }
+  }
+
+  &-bottom {
+    &-right {
+      top: 100%;
+    }
+    &-left {
+      top: 100%;
+      right: 0;
+    }
+  }
+
+  &-left {
+    &-right {
+      right: 100%;
+      top: 0;
+    }
+
+    &-left {
+      right: 100%;
+      bottom: 0;
+    }
+  }
+
+  &-right {
+    &-right {
+      left: 100%;
+      top: 0;
+    }
+
+    &-left {
+      left: 100%;
+      bottom: 0;
+    }
+  }
+}
+
+.focus {
+  background-color: var(--gray-200);
+}
