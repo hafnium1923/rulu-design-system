@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-//* external
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { COLOR } from "@/constants/color";

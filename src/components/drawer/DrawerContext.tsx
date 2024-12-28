@@ -1,5 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import type { PropsWithChildren } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type PropsWithChildren,
+} from "react";
 
 export interface DrawerContextProps {
   isOpen: boolean;
@@ -13,10 +18,6 @@ export const DrawerContext = createContext<DrawerContextProps>(
   {} as DrawerContextProps
 );
 
-export interface DrawerProviderProps {
-  context?: Pick<DrawerContextProps, "isOpen" | "onOpen" | "onClose">;
-}
-
 export const useDrawerContext = () => {
   const context = useContext(DrawerContext);
 
@@ -26,6 +27,10 @@ export const useDrawerContext = () => {
 
   return context;
 };
+
+export interface DrawerProviderProps {
+  context?: Pick<DrawerContextProps, "isOpen" | "onOpen" | "onClose">;
+}
 
 export const DrawerProvider = ({
   context,
