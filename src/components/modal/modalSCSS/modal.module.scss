@@ -98,11 +98,10 @@
 
   &-body {
     flex: 1;
-    height: 100%;
+    height: fit-content;
     font-size: 18px;
     font-weight: 400;
     white-space: pre-line;
-    overflow-y: scroll;
   }
 
   &-footer {

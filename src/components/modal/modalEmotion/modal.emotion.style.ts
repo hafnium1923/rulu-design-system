@@ -110,7 +110,6 @@ export const body = css`
   font-size: 18px;
   font-weight: 400;
   white-space: pre-line;
-  overflow-y: scroll;
 `;
 
 export const footer = css`

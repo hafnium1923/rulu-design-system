@@ -7,7 +7,7 @@ import Modal from "@/components/modal/modalSCSS/Modal.scss";
 
 /**
  * 공용 Modal 컴포넌트 - scss.Ver
- * 모달, 레이아웃, 헤더, 바디, 푸터를 조합하여 사용
+ * Menu, MenuButton, List, Item, Group을 조합하여 사용
  */
 const meta = {
   title: "Modal/scss",
@@ -76,9 +76,7 @@ export const Default: Story = {
             <Modal.Header>모달 타이틀</Modal.Header>
             <Modal.Body>모달내용은 여기 적으시면 됩니다.</Modal.Body>
             <Modal.Footer>
-              <Modal.Button act="close" variant="primary">
-                모달 닫기
-              </Modal.Button>
+              <Modal.Button act="close">모달 닫기</Modal.Button>
             </Modal.Footer>
           </Modal.Layout>
         </Modal>
@@ -124,9 +122,7 @@ export const VariantsAndPositions: Story = {
                             이 모달은 {size} 크기와 {position} 위치를 갖습니다.
                           </Modal.Body>
                           <Modal.Footer>
-                            <Modal.Button act="close" variant="primary">
-                              모달 닫기
-                            </Modal.Button>
+                            <Modal.Button act="close">모달 닫기</Modal.Button>
                           </Modal.Footer>
                         </Modal.Layout>
                       </Modal>

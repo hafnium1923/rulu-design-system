@@ -1,17 +1,24 @@
-import { type ForwardedRef, forwardRef, type MouseEvent } from "react";
+import {
+  type ForwardedRef,
+  forwardRef,
+  type HTMLAttributes,
+  type MouseEvent,
+  type PropsWithChildren,
+} from "react";
 
 import { useModalContext } from "@/components/modal/ModalContext";
-import Button, {
-  type ButtonProps,
-} from "@/components/button/buttonSCSS/Button.scss";
-
-interface ModalButtonProps extends ButtonProps {
+interface ModalButtonProps extends HTMLAttributes<HTMLButtonElement> {
   act?: "close" | "open";
 }
 
 const ModalButton = forwardRef(
   (
-    { act = "close", onClick, children, ...rest }: ModalButtonProps,
+    {
+      act = "close",
+      onClick,
+      children,
+      ...rest
+    }: PropsWithChildren<ModalButtonProps>,
     ref: ForwardedRef<HTMLButtonElement>
   ) => {
     const { onClose, onOpen } = useModalContext();
@@ -29,9 +36,9 @@ const ModalButton = forwardRef(
     };
 
     return (
-      <Button onClick={handleClickButton} ref={ref} {...rest}>
+      <button onClick={handleClickButton} ref={ref} {...rest}>
         {children}
-      </Button>
+      </button>
     );
   }
 );
