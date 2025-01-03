@@ -10,7 +10,7 @@ import Modal from "@/components/modal/modalSCSS/Modal.scss";
  * Menu, MenuButton, List, Item, Group을 조합하여 사용
  */
 const meta = {
-  title: "Modal/scss",
+  title: "Common/Modal/scss",
   component: Modal,
   tags: ["autodocs"],
   argTypes: {

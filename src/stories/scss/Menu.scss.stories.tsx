@@ -9,7 +9,7 @@ import Svg from "@/components/common/Svg";
  * 모달, 레이아웃, 헤더, 바디, 푸터를 조합하여 사용
  */
 const meta = {
-  title: "Menu/scss",
+  title: "Common/Menu/scss",
   component: Menu,
   tags: ["autodocs"],
   argTypes: {

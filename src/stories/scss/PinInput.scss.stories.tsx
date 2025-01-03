@@ -9,7 +9,7 @@ import Svg from "@/components/common/Svg";
  */
 const meta: Meta<typeof PinInput> = {
   component: PinInput,
-  title: "PinInput/scss",
+  title: "Common/PinInput/scss",
   tags: ["autodocs"],
   args: {
     length: 4,

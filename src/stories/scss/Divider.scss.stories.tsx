@@ -5,7 +5,7 @@ import Divider from "@/components/divider/dividerSCSS/Divider.scss";
  * 공용 Divider 컴포넌트 - scss.Ver
  */
 const meta = {
-  title: "Divider/scss",
+  title: "Common/Divider/scss",
   component: Divider,
   tags: ["autodocs"],
   render: (args) => (

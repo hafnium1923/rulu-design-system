@@ -8,7 +8,7 @@ import type { Meta, StoryObj } from "@storybook/react";
  * button 태그의 모든 속성 가능
  */
 const meta = {
-  title: "Button/emotion",
+  title: "Common/Button/emotion",
   component: Button,
   tags: ["autodocs"],
   parameters: {

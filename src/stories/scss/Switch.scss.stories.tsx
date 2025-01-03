@@ -7,7 +7,7 @@ import Switch from "@/components/switch/switchSCSS/Switch";
  * 공용 Switch 컴포넌트 - scss.Ver
  */
 const meta: Meta<typeof Switch> = {
-  title: "Switch/scss",
+  title: "Common/Switch/scss",
   component: Switch,
   tags: ["autodocs"],
   render: (args) => {

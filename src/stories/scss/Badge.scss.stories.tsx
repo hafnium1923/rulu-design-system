@@ -13,7 +13,7 @@ import Badge, { type ColorKey } from "@/components/badge/badgeSCSS/Badge.scss";
  */
 const meta: Meta<typeof Badge> = {
   component: Badge,
-  title: "Badge/scss",
+  title: "Common/Badge/scss",
   tags: ["autodocs"],
   argTypes: {
     children: {

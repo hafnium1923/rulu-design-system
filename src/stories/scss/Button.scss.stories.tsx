@@ -9,7 +9,7 @@ import Button, {
  * button 태그의 모든 속성 가능
  */
 const meta = {
-  title: "Button/scss",
+  title: "Common/Button/scss",
   component: Button,
   tags: ["autodocs"],
   parameters: {

@@ -23,7 +23,7 @@ const items = [
  * 공용 아코디언 컴포넌트 - scss.Ver
  */
 const meta = {
-  title: "Accordion/scss",
+  title: "Common/Accordion/scss",
   component: Accordion,
   tags: ["autodocs"],
   render: (args) => {

@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from "@storybook/react";
  * input 태그의 모든 속성 가능
  */
 const meta = {
-  title: "Input/emotion",
+  title: "Common/Input/emotion",
   component: Input,
   tags: ["autodocs"],
   parameters: {

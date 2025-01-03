@@ -9,7 +9,7 @@ import Button from "@/components/button/buttonSCSS/Button.scss";
  * 공용 Drawer 컴포넌트 - scss.Ver
  */
 const meta = {
-  title: "Drawer/scss",
+  title: "Common/Drawer/scss",
   component: Drawer,
   tags: ["autodocs"],
   argTypes: {
