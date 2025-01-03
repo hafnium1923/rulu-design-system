@@ -25,6 +25,8 @@ export interface SwitchProps {
   disabled?: boolean;
   onColor?: string;
   offColor?: string;
+  onLabelColor?: string;
+  offLabelColor?: string;
   thumbOnColor?: string;
   thumbOffColor?: string;
 }
@@ -47,6 +49,8 @@ export interface SwitchProps {
  * @param {boolean} [disabled=false] - 스위치를 비활성화 상태로 설정합니다.
  * @param {string} [onColor] - 스위치가 켜져 있을 때의 트랙 색상을 설정합니다.
  * @param {string} [offColor] - 스위치가 꺼져 있을 때의 트랙 색상을 설정합니다.
+ * @param {string} [onLabelColor] - 스위치가 켜져 있을 때의 라벨 색상을 설정합니다.
+ * @param {string} [offLabelColor] - 스위치가 꺼져 있을 때의 라벨 색상을 설정합니다.
  * @param {string} [thumbOnColor] - 스위치가 켜져 있을 때 thumb의 색상을 설정합니다.
  * @param {string} [thumbOffColor] - 스위치가 꺼져 있을 때 thumb의 색상을 설정합니다.
  */
@@ -66,6 +70,8 @@ const Switch = ({
   disabled = false,
   onColor,
   offColor,
+  onLabelColor,
+  offLabelColor,
   thumbOnColor,
   thumbOffColor,
 }: SwitchProps) => {
@@ -122,7 +128,12 @@ const Switch = ({
           $offColor={offColor}
           $onColor={onColor}
         >
-          <S.LabelSpan $size={size} $isOn={isOn}>
+          <S.LabelSpan
+            $size={size}
+            $isOn={isOn}
+            $onColor={onLabelColor}
+            $offColor={offLabelColor}
+          >
             {isOn ? onLabel : offLabel}
           </S.LabelSpan>
           <S.ThumbSpan

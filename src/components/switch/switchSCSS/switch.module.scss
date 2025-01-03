@@ -64,7 +64,6 @@
   &-label {
     font-size: 10px;
     white-space: nowrap;
-    color: var(--white);
     flex-grow: 1;
     text-align: center;
 
@@ -74,6 +73,7 @@
     }
 
     &-off {
+      color: var(--label-off-color, var(--gray-500));
       margin-right: 10px;
       &.xSmall {
         margin-left: 18px;
@@ -94,6 +94,8 @@
 
     &-on {
       margin-left: 10px;
+      color: var(--label-on-color, var(--white));
+
       &.xSmall {
         margin-right: 18px;
       }

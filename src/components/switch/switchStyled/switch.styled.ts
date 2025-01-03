@@ -120,10 +120,13 @@ export const TrackDiv = styled.div<{
 export const LabelSpan = styled.span<{
   $size: "xSmall" | "small" | "medium" | "large";
   $isOn: boolean;
+  $offColor: string | undefined;
+  $onColor: string | undefined;
 }>`
   font-size: 10px;
   white-space: nowrap;
-  color: ${theme.color.white};
+  color: ${({ $isOn, $onColor, $offColor }) =>
+    $isOn ? $onColor || theme.color.white : $offColor || theme.color.gray500};
   flex-grow: 1;
   text-align: center;
 
