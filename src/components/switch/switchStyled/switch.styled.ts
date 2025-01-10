@@ -65,7 +65,7 @@ const thumbSizes = {
 export const ContainerDiv = styled.div<{
   $descriptionPosition: "top" | "bottom" | "left" | "right";
 }>`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
 
