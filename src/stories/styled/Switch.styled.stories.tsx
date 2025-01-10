@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import Switch from "@/components/switch/switchStyled/Switch";
+import { fn } from "@storybook/test";
 
 /**
  * 공용 Switch 컴포넌트 - styled-component.Ver
@@ -94,7 +95,7 @@ export const Solid: Story = {
   args: {
     size: "medium",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
   },
 };
 
@@ -102,7 +103,7 @@ export const Raised: Story = {
   args: {
     size: "medium",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
     variant: "raised",
   },
 };
@@ -111,7 +112,7 @@ export const ExtraSmall: Story = {
   args: {
     size: "xSmall",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
   },
 };
 
@@ -119,7 +120,7 @@ export const Small: Story = {
   args: {
     size: "small",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
   },
 };
 
@@ -127,7 +128,7 @@ export const Medium: Story = {
   args: {
     size: "medium",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
   },
 };
 
@@ -135,7 +136,7 @@ export const Large: Story = {
   args: {
     size: "large",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
   },
 };
 
@@ -143,7 +144,7 @@ export const WithDescription: Story = {
   args: {
     size: "medium",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
     description: <div>이것은 설명입니다.</div>,
   },
 };
@@ -152,7 +153,7 @@ export const WithDescriptionComponent: Story = {
   args: {
     size: "medium",
     checked: false,
-    onChange: () => console.log("Switch changed"),
+    onChange: fn(),
     description: (
       <div style={{ display: "flex", alignItems: "center" }}>
         <span style={{ marginLeft: "8px" }}>로그인</span>
@@ -165,7 +166,7 @@ export const WithCustomColor: Story = {
   args: {
     size: "medium",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
     onColor: "rgb(21, 99, 223)",
     offColor: "#99b4d9",
     thumbOnColor: "#1a0cdc",
@@ -177,7 +178,7 @@ export const WithThumbText: Story = {
   args: {
     size: "large",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
     onThumb: "ON",
     offThumb: "OFF",
   },
@@ -187,7 +188,7 @@ export const WithInnerLabel: Story = {
   args: {
     size: "large",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
     onLabel: "자동 업데이트",
     offLabel: "수동 업데이트",
   },
@@ -197,7 +198,7 @@ export const Disabled: Story = {
   args: {
     size: "medium",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
     description: "Disabled switch",
     disabled: true,
   },
@@ -207,7 +208,7 @@ export const ReadOnly: Story = {
   args: {
     size: "medium",
     checked: false,
-    onChange: () => console.log("Switch Changed"),
+    onChange: fn(),
     description: "Read-only switch",
     readonly: true,
   },
